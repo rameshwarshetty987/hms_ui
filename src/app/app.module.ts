@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientService } from './services/patient.service';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { PatientComponent } from './components/patient/patient.component';
 import { PatientListComponent } from './components/patient-list/patient-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -19,13 +20,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
   ],
   providers: [PatientService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,PatientComponent]
 })
 export class AppModule { }

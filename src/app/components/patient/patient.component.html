@@ -1,48 +1,43 @@
-<form  class="normal-form" (ngSubmit)="onSubmit()">
-
-    <div class="form-group">
-        <label for="Name ">Name </label>
-        <input type="text" id="name" required [(ngModel)]="patient.name" name="name">
+  <div class="container">
+    <legend >Patient Register</legend>
+    <div>
+      <div>
+        <form [formGroup]="patientRegisterForm" (ngSubmit)="onSubmit()">
+          <div >
+            <label for="name" class="form-label" class="col-md-1">Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="patient.name" formControlName="name" />
+          </div>
+          <div>
+              <label for="dob" class="form-label" class="col-md-1">Date of Birth</label>
+              <input type="date" class="form-control" required [(ngModel)]="patient.dob" formControlName="name" />
+          </div>
+          <div>
+            <label for="gender" class="form-label" class="col-md-1">Gender</label>
+              <input type="radio" value="Male" required [(ngModel)]="patient.gender" formControlName="gender">Male
+              <input type="radio" value="Female" required [(ngModel)]="patient.gender" formControlName="gender">Female
+          </div>
+          <div>
+            <label for="bloodGroup" class="form-label">Blood Group</label>
+            <input type="text" class="form-control" id="bloodGroup" required [(ngModel)]="patient.bloodGroup" formControlName="bloodGroup"/>
+          </div>
+          <div>
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" required [(ngModel)]="patient.email" formControlName="email"/>
+          </div>
+          <div>
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" required [(ngModel)]="patient.address" formControlName="address"/>
+          </div>
+          <div>
+            <label for="mobile" class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="mobile" required [(ngModel)]="patient.mobile" formControlName="mobile"/>
+          </div>
+          <div class="mb-1">
+            <label for="cghsPrivate" class="form-label">CGHS/Private</label>
+            <input type="text" class="form-control" id="cghsPrivate" required [(ngModel)]="patient.cghsPrivate" formControlName="cghsPrivate"/>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
-    <div class="form-group">
-        <label for="dob">DOB </label>
-        <input type="text" id="dob" required [(ngModel)]="patient.dob" name="dob">
-    </div>
-    
-    <div class="form-group">
-        <label for="gender">Geneder </label>
-        <input type="radio" value="male" id="gender" required [(ngModel)]="patient.gender" name="gender"> Male
-        <input type="radio" value="female" id="gender" required [(ngModel)]="patient.gender"  name="gender"> Female
-    </div>
-
-    <div class="form-group">
-        <label for="bloodGroup">Blood Group </label>
-        <input type="text" class="form-control" id="bloodGroup" required [(ngModel)]="patient.bloodGroup" name="bloodGroup">
-      </div>
-    
-    <div class="form-group">
-        <label for="email">Email </label>
-        <input type="text" class="form-control" id="email" required [(ngModel)]="patient.email" name="email">
-      </div>
-    
-    <div class="form-group">
-        <label for="address">Address </label>
-        <input type="text" class="form-control" id="address" required [(ngModel)]="patient.address" name="address">
-      </div>
-
-    <div class="form-group">
-        <label for="mobile">Mobile </label>
-        <input type="text" class="form-control" id="mobile" required [(ngModel)]="patient.mobile" name="mobile">
-      </div>
-
-    <div class="form-group">
-        <label for="cghsPrivate">CGHS/Private</label>
-        <input type="text" class="form-control" id="cghsPrivate" required [(ngModel)]="patient.cghsPrivate" name="cghsPrivate">
-      </div>
-
-    <p>
-        <button class="btn btn-primary" type="submit">Submit</button>
-        
-    </p>
-
-</form>
+  </div>

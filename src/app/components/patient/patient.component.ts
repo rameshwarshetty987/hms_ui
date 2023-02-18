@@ -10,6 +10,22 @@ import { PatientService } from 'src/app/services/patient.service';
 })
 export class PatientComponent implements OnInit {
   
+    //reactive form binding 
+   patientRegisterForm= new FormGroup({
+    name:new FormControl(''),
+    dob:new FormControl(''),
+    gender:new FormControl(''),
+    bloodGroup:new FormControl(''),
+    email:new FormControl(''),
+    address:new FormControl(''),
+    mobile:new FormControl(''),
+    cghsPrivate:new FormControl(''),
+   })
+
+
+
+
+
      patient: Patient = new Patient();
      submitted = false;
       
@@ -34,6 +50,8 @@ export class PatientComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
    this.savePatient();
+   console.warn(this.patientRegisterForm.value);
+   
   }
 
   }
